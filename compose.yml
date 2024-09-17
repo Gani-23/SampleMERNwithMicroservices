@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  frontend:
+    container_name: mern_frontend
+    build: frontend/
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    
+  backend:
+    container_name: mern_backend
+    build: backend/helloService/
+    ports:
+      - "3001:3001"
+
+  
+  profileservice:
+    container_name: mern_profileservice
+    build: backend/profileservice/
+    ports:
+      - "3002:3002"
